@@ -1,0 +1,69 @@
+.login{
+    border: 1px solid;
+    text-align: center;
+    margin: 90px;
+    background-color: #EBBE9B;
+    object-fit: contain;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    
+    
+}
+
+.username,.password{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#idpass{
+    height: 20px;
+    width: 42%;
+    border-radius: 20px;
+    font-family: 'cursive';
+    border-style: none;
+
+}
+#idpass:focus{
+    outline-style: none;
+    border-style: none;
+    background-color: #B3B5BB;
+}
+
+.sportify{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.idk{
+    width: 300px !important;
+    height: auto !important;
+    border-style: none;
+    padding-top: 20px;
+    
+}
+
+#login{
+    background-color: #ffc56e;
+    width: 250px;
+    border-radius: 20px;
+    border-style: hidden;
+    border: 1px solid;
+    visibility: visible;
+    padding: 5px;
+    margin-bottom: 10px;
+
+}
+#login:hover{
+    background-color: blanchedalmond;
+}
+
+main{
+    height: max-content;
+    background-color: #19535F;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}

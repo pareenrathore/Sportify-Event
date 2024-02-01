@@ -1,0 +1,31 @@
+.card{
+    width: 33%;
+    border:none;
+    margin: 10px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 40px;
+    background-color: white;
+}
+
+.cards{
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    border-collapse: collapse;
+    background-color: #07617D;
+    border:1px solid black;
+
+}
+
+p{
+    font-size: 8px;
+    margin: 0%;
+    padding: 0%;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+}

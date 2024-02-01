@@ -1,0 +1,22 @@
+div.EventCard{
+    height: 200px;
+    width: 150px;
+    background-color: black ;
+    border-radius: 15px;
+    color: white;
+    font-family: 'poppins';
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+textarea{
+    height: 10px;
+
+}
+
+label{
+    padding: 10px;
+    padding-bottom: 5px;
+}
