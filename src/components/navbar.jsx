@@ -19,9 +19,10 @@ const Navbar = () => {
             <li><NavLink to='/EventCreation'  style={{textDecoration:'none',color: '#ffe4c4'}}>Create Event</NavLink></li>
            </ul>
 
+           <NavLink to='/Login' id="NavLogin">
             <span class="last"> <button type="button" id="menu">
-                <NavLink to='/Login'>Login</NavLink> 
-            </button></span>
+                Login
+            </button></span></NavLink> 
 
         </nav>
         <Outlet/>

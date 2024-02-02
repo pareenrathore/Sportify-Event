@@ -1,11 +1,14 @@
 h1{
     text-align: center;
+    color: red !important;
+    
 }
 
 main{
     text-align: justify;
     background-color: #07617D;
     padding-top: 1px;
+    height: 150vh;
 }
 
 #huehue{
