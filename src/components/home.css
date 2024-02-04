@@ -1,21 +1,16 @@
-h1{
-    text-align: center;
-    color: red !important;
-    
-}
-
-main{
-    text-align: justify;
-    background-color: #07617D;
-    padding-top: 1px;
-    height: 150vh;
-}
-
-#huehue{
-    padding-left: 70px;
-    padding-right: 70px;
-    align-content: center;
-    font-size: 15px
-
-}
-
+/* Define styles for larger screens */
+@media (min-width: 768px) {
+    .card {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  /* Define styles for smaller screens */
+  @media (max-width: 767px) {
+    .card {
+      max-width: 100%;
+      margin: 0 10px;
+    }
+  }
+  

@@ -1,22 +1,48 @@
-div.EventCard{
-    height: 200px;
-    width: 150px;
-    background-color: black ;
-    border-radius: 15px;
-    color: white;
-    font-family: 'poppins';
-    border: 1px solid black;
+.container {
+    width: 100%;
+    max-width: 1300px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .notes-cards-row {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-}
-
-textarea{
-    height: 10px;
-
-}
-
-label{
+    align-items: center;
+  }
+  
+  .notes-cards-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .col-md-4 {
+    flex: 0 0 calc(33.3333% - 20px); /* Adjust the width and margin as needed */
+    margin: 10px;
+  }
+  
+  .btn-positions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .img{
     padding: 10px;
-    padding-bottom: 5px;
-}
+  }
+  
+  /* Media Queries for responsiveness */
+  
+  @media only screen and (max-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 calc(50% - 20px);
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .col-md-4 {
+      flex: 0 0 calc(100% - 20px);
+    }
+  }
+  
