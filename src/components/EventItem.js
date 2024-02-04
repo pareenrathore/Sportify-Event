@@ -46,12 +46,11 @@ const EventItem = (props) => {
               <Typography variant="h5" component="div">
                 {event.eventName}
               </Typography>
-
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
                 Location: {event.eventLocation}
               </Typography>
               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                Date: {event.eventDate}
+                Date: {event.eventDate.slice(0, 10)}
               </Typography>
               <Typography variant="body2">{event.eventDescription}</Typography>
             </CardContent>
