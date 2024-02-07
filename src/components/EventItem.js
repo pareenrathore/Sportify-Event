@@ -37,6 +37,31 @@ const EventItem = (props) => {
     setEvents(newEvent);
   };
 
+
+  const updateEvent = async (id, updatedEventData) => {
+    // Todo: API Call
+    const response = await fetch(`${host}/update/event/${id}`, {
+      method: "PUT", // Use PUT method for update
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedEventData), // Send updated data in the request body
+    });
+    const json = await response.json();
+    console.log(json);
+    // Assuming 'events' is the list of events in your state
+    const updatedEvents = events.map((event) => {
+      if (event._id === id) {
+        // If the event ID matches the updated event ID, return the updated event
+        return { ...event, ...updatedEventData };
+      } else {
+        // Otherwise, return the original event
+        return event;
+      }
+    });
+    setEvents(updatedEvents); // Update the events state with the updated list
+  };
+
   return (
     <div className="col-md-4">
       <ThemeProvider theme={darkTheme}>
@@ -63,6 +88,15 @@ const EventItem = (props) => {
                 }}
               >
                 Delete
+              </Button>
+              <Button
+                size="small"
+                onClick={() => {
+                  UpdateEvent(event._id);
+                  props.showAlert("Event deleted successfully.", "success");
+                }}
+              >
+                Update
               </Button>
             </CardActions>
           </Card>
