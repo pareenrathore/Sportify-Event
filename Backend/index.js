@@ -8,7 +8,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://sportify-p.netlify.app",
+    origin: "https://sportify-pari.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
@@ -37,8 +37,6 @@ const EventSchema = new mongoose.Schema({
 });
 
 const Event = mongoose.model("Event", EventSchema);
-// Sample in-memory data
-const events = [];
 
 // Event Endpoints
 app.get("/get/events", async (req, res) => {
@@ -74,18 +72,6 @@ app.post("/newevent", async (req, res) => {
   } catch (err) {
     console.error(err.Message);
     res.status(500).send("Internal server error.");
-  }
-});
-
-app.get("/api/events/:eventId", (req, res) => {
-  // Return details for a specific event
-  const eventId = req.params.eventId;
-  const event = events.find((e) => e.id === eventId);
-
-  if (event) {
-    res.json(event);
-  } else {
-    res.status(404).json({ error: "Event not found" });
   }
 });
 
@@ -158,7 +144,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-//deleting event id
+//deleting event by id
 app.delete("/delete/event/:eventId", async (req, res) => {
   try {
     let event = await Event.findById(req.params.eventId);
@@ -167,6 +153,40 @@ app.delete("/delete/event/:eventId", async (req, res) => {
     }
     event = await Event.findByIdAndDelete(req.params.eventId);
     res.json({ success: "Event has been deleted", event: event });
+  } catch (err) {
+    console.error(err.Message);
+    res.status(500).send("Internal server error.");
+  }
+});
+
+// Update or edit an event
+app.put("/update/event/:id", async (req, res) => {
+  const { eventName, eventDescription, eventDate, eventLocation } = req.body;
+  try {
+    const newEvent = {};
+    if (eventName) {
+      newEvent.eventName = eventName;
+    }
+    if (eventDescription) {
+      newEvent.eventDescription = eventDescription;
+    }
+    if (eventDate) {
+      newEvent.eventDate = eventDate;
+    }
+    if (eventLocation) {
+      newEvent.eventLocation = eventLocation;
+    }
+
+    let event = await Event.findById(req.params.id);
+    if (!event) {
+      return res.status(404).send("Not Found");
+    }
+    event = await Event.findByIdAndUpdate(
+      req.params.id,
+      { $set: newEvent },
+      { new: true }
+    );
+    res.json(event);
   } catch (err) {
     console.error(err.Message);
     res.status(500).send("Internal server error.");
