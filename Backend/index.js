@@ -8,7 +8,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://sportify-p.netlify.app",
+    origin: "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })

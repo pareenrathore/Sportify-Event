@@ -4,9 +4,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import home_pe from "./home_pe.png";
 
-const Home = (props) => {
+const Home = () => {
   return (
     <div className="card">
       {localStorage.getItem("uname") ? (
