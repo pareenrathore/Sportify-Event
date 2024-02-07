@@ -64,14 +64,16 @@ const EventItem = (props) => {
               >
                 Delete
               </Button>
-              {localStorage.getItem("token") ? <Button
-                size="small"
-                onClick={() => {
-                  updateEvent(event);
-                }}
-              >
-                Edit
-              </Button> : null}
+              {!localStorage.getItem("token") ? null : (
+                <Button
+                  size="small"
+                  onClick={() => {
+                    updateEvent(event);
+                  }}
+                >
+                  Edit
+                </Button>
+              )}
             </CardActions>
           </Card>
         </Box>
