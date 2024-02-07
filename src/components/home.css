@@ -1,8 +1,8 @@
 /* Define styles for larger screens */
 @media (min-width: 768px) {
     .card {
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 100%;
+      margin: 0 20%;
     }
   }
   
@@ -14,3 +14,67 @@
     }
   }
   
+  .card{
+    position: relative;
+    height: 100%;
+    padding-bottom: 0%;
+  }
+
+
+
+  main{
+    background-color: aqua;
+    border-collapse: collapse;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    overflow-x: hidden;
+    width: 100%;
+    align-items: center;
+  }
+
+  .heading{
+    text-align: center;
+    padding: 8px;
+    font-size: x-large;
+  }
+
+  .content{
+    font-size: large;
+    padding-bottom: 8%;
+    margin-bottom: 0%;
+  }
+  
+  .HomeEvent{
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    overflow: contain;
+    width: 100%;
+  }
+
+  .pahadImage{
+    width: 53%;
+    
+  }
+
+  .pahadImage img{
+    border-radius: 5%;
+  }
+
+  .pahadImageContent{
+    padding: 2% 4% 4% 5%;
+    font-size: small;
+    width: 35%;
+    text-align: justify;
+    position: absolute;
+    top: 155%;
+    left: 54%;
+    background-color: white;
+    border-radius: 5%;
+    height: 80%;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: flex-start ;
+    
+  }
